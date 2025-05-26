@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 //mongodb+srv://hfaidhbacem2017:<db_password>@cluster0.87wzldm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
 const PORT = 3000;
 import productRoutes from './routes/productRoutes.js'
+import userRoutes from './routes/userRoutes.js'
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.get("/", (req, res) => {
 });
 
 app.use('/api/products',productRoutes)
+app.use('/api/users',userRoutes)
 
 app.listen(PORT, (error) => {
   if (!error) {
